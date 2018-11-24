@@ -21,6 +21,7 @@ d) cv2
 
 ### 1. Data prepare
 1) `python data_prepare.py` will process (crop, subtract image by mean-image, ...) the images from UCF 101 dataset and save one video clip as one `.npy` file for the later convenience for loading data. 
+
 2) UCF 101 train test split 1 is used.
 
 
@@ -28,9 +29,11 @@ d) cv2
 
 1). `python train.py` will train the C-DUP or 2D-DUP generator.
 The trained model will saved in `./G_model_3D` or `./G_model_2D` directory.
+
 2). `python generate_pertubation.py` will generate perturbations 
 from the C-DUP generator and save the perturbations in `./G_model_3D` 
 or generate perturbations from the 2D-DUP generator and save the perturbations in `./G_model_2D` directory.
+
 3). `python test.py` will test the attack success rate with the generated perturbation.
 
 
