@@ -23,9 +23,9 @@ pre_sum_train = [0]*(num_classes+1)
 pre_sum_valid = [0]*(num_classes+1)
 pre_sum_test = [0]*(num_classes+1)
 for i in range(num_classes):
-	pre_sum_train[i+1] = pre_sum_train[i]+cnt_class_train[i]
-	pre_sum_valid[i+1] = pre_sum_valid[i]+cnt_class_valid[i]
-	pre_sum_test[i+1] = pre_sum_test[i]+cnt_class_test[i]
+	pre_sum_train[i+1] = pre_sum_train[i] + cnt_class_train[i]
+	pre_sum_valid[i+1] = pre_sum_valid[i] + cnt_class_valid[i]
+	pre_sum_test[i+1] = pre_sum_test[i] + cnt_class_test[i]
 
 permutation_train_target_class = np.random.permutation(range(pre_sum_train[target_class],pre_sum_train[target_class+1]))
 permutation_train_non_target_class = list(set(range(pre_sum_train[num_classes]))-set(permutation_train_target_class))			

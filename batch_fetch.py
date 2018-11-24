@@ -50,7 +50,7 @@ def next_batch(pos, mode="train"):
 		else:
 			idx=i;
 		label, clip = num_to_npy(idx, pre_sum, dir_name)
-		ret_label.append(label);
-		ret_clip.append(clip);
+		ret_label.append(label)
+		ret_clip.append(clip)
 	return True, ret_clip, ret_label, nex_pos
 

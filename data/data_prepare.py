@@ -26,7 +26,7 @@ def data_processing(mode):
 		line = line.strip('\n').split()
 		image_path = line[0]
 		label = int(line[1])
-		dir_name = dir_name_prefix+str(label).zfill(3)
+		dir_name = dir_name_prefix + str(label).zfill(3)
 		if not os.path.exists(dir_name):
 			os.makedirs(dir_name)
 		seg_dir = UCF_path + image_path
@@ -63,14 +63,14 @@ def pre_process(clip_np):
 	ret_clip=[]
 	for i in range(num_frames_per_clip):
 		img = Image.fromarray(clip_np[i].astype(np.uint8))
-		if(img.width>img.height):
-        		scale = float(crop_size)/float(img.height)
-        		img = np.array(cv2.resize(np.array(img),(int(img.width * scale + 1), crop_size))).astype(np.float32)
+		if img.width > img.height :
+        		scale = float(crop_size) / float(img.height)
+        		img = np.array(cv2.resize(np.array(img),(int(img.width*scale+1), crop_size))).astype(np.float32)
         	else:
           		scale = float(crop_size)/float(img.width)
-          		img = np.array(cv2.resize(np.array(img),(crop_size, int(img.height * scale + 1)))).astype(np.float32)
-        	img = img[int((img.shape[0] - crop_size)/2):int((img.shape[0] - crop_size)/2 + crop_size), int((img.shape[1] - 		
-			crop_size)/2):int((img.shape[1] - crop_size)/2 + crop_size),:] - np_mean[i]
+          		img = np.array(cv2.resize(np.array(img),(crop_size, int(img.height*scale+1)))).astype(np.float32)
+        	img = img[int((img.shape[0]-crop_size)/2):int((img.shape[0]-crop_size)/2 + crop_size), int((img.shape[1]- 		
+			crop_size)/2):int((img.shape[1]-crop_size)/2 + crop_size),:] - np_mean[i]
 		ret_clip.append(img)
 	ret_clip = np.array(ret_clip)
 	#print(ret_clip.shape)

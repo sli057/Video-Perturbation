@@ -5,13 +5,13 @@ decay_rate = 0.95
 train_epoch = 3 
 
 batch_size_per_tower = 16 
-gpu_number = 2
+gpu_number = 16
 batch_size = batch_size_per_tower * gpu_number
 
 z_size = 100
 k_size = 3
 p_max = 10
-l = 1
+l = 1 #lambda
 ratio = 0.5
 
 G_path_3D = "./G_model_3D/"

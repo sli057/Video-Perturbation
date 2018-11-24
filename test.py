@@ -10,7 +10,7 @@ model = Discriminator()
 
 def attack_test(sess, p, mode='test'):
 	model.saver_D.restore(sess, D_model)
-	p_batch = np.expand_dims(p,axis=0) #p_batch
+	p_batch = np.expand_dims(p, axis=0) #p_batch
 	res_non_target=[]
 	res_target=[]
 	if mode == "valid":

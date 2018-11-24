@@ -42,7 +42,7 @@ def train(is_3D = True):
 			feed_dict[model.is_train] = True
 			fetches = [model.p, model.loss, model.train]
 			p_batch, loss_step, _ = sess.run(fetches,feed_dict)
-			print("epoch %d iteration %d : %f" % (step+1 ,iteration+1,loss_step))
+			print("epoch %d iteration %d : %f" % (step+1, iteration+1, loss_step))
 			if iteration != 0 and iteration%500 == 0:
 				print("Model saved in file: %s" % model.saver_G.save(sess, G_model))
 			if iteration != 0 and iteration%50 ==0:
