@@ -28,7 +28,7 @@ d) cv2
 ### 2. Model
 
 1). `python train.py` will train the C-DUP or 2D-DUP generator.
-The trained model will saved in `./G_model_3D` or `./G_model_2D` directory.
+The trained model will be saved in `./G_model_3D` or `./G_model_2D` directory.
 
 2). `python generate_pertubation.py` will generate perturbations 
 from the C-DUP generator and save the perturbations in `./G_model_3D` 
